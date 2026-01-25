@@ -8,21 +8,21 @@ import { useEffect } from 'react'
 import { initializeAnecdotes } from './reducers/store.js'
 
 const App = () => {
-   const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
-   useEffect(() => {
-      dispatch(initializeAnecdotes())
-   }, [dispatch])
+    useEffect(() => {
+        dispatch(initializeAnecdotes())
+    }, [dispatch])
 
-   return (
-      <div>
-         <h2>Anecdotes</h2>
-         <Notification />
-         <Filter />
-         <AnecdoteList />
-         <AnecdoteForm />
-      </div>
-   )
+    return (
+        <div>
+            <h2>Anecdotes</h2>
+            <Notification />
+            <Filter />
+            <AnecdoteList />
+            <AnecdoteForm />
+        </div>
+    )
 }
 
 export default App
