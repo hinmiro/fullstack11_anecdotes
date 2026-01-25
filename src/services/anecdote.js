@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = '/anecdotes'
+const baseUrl = import.meta.env.VITE_BACKEND_URL
 
 
 const getAll = async () => {
