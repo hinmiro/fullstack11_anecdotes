@@ -13,10 +13,10 @@ const PORT = process.env.PORT || 3000
 app.use(express.static(path.join(__dirname, 'dist')))
 
 app.use(
-   '/anecdotes',
    createProxyMiddleware({
       target: 'http://localhost:4000',
       changeOrigin: true,
+      pathFilter: '/anecdotes'
    })
 )
 
