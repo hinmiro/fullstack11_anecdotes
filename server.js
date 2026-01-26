@@ -12,6 +12,10 @@ const PORT = process.env.PORT || 3000
 
 app.use(express.static(path.join(__dirname, 'dist')))
 
+app.get('/api/health', (req, res) => {
+    res.status(200).send('Ok')
+})
+
 app.use(
     createProxyMiddleware({
         target: 'http://localhost:4000',
