@@ -22,3 +22,14 @@ jobs:
         run: npm run lint
       - name: Testing
         run: npm run test
+
+      - name: Deploy to render
+        if: ${{ github.event_name === 'push' }}
+        uses: JorgeLNJunior/render-deploy@5bd1684976d2745e6768f4ef8b8a21067fb0cd6f
+        with:
+          service_id: ${{ secrets.RENDER_SERVICE_ID }}
+          api_key: ${{ secrets.RENDER_API_KEY }}
+          clear_cache: true
+          wait_deploy: true
+          deployment_environment: "production"
+          
