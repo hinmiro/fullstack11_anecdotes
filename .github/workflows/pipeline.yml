@@ -25,10 +25,7 @@ jobs:
 
       - name: Deploy to render
         if: ${{ github.event_name == 'push' }}
-        uses: JorgeLNJunior/render-deploy@v1.4.7
-        with:
-          service_id: ${{ secrets.RENDER_SERVICE_ID }}
-          api_key: ${{ secrets.RENDER_API_KEY }}
-          clear_cache: true
-          wait_deploy: true
-          deployment_environment: "production"
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
