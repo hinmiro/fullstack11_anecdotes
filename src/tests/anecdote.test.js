@@ -1,6 +1,5 @@
 process.env.VITE_BACKEND_URL = 'http://localhost:3001/anecdotes'
 
-import React from 'react'
 import {
     fireEvent,
     render,
@@ -12,7 +11,6 @@ import axiosMock from 'axios'
 import { act } from 'react-dom/test-utils'
 import '@testing-library/jest-dom'
 import { Provider } from 'react-redux'
-// import store from '../reducers/store'
 import App from '../App'
 import { configureStore } from '@reduxjs/toolkit'
 import AnecdoteList from '../components/AnecdoteList'
